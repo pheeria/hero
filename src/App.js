@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Geosuggest from 'react-geosuggest';
+import './geosuggest.css';
 
 class App extends Component {
+  onSuggestSelect(suggest) {
+    console.log(suggest);
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Geosuggest
+          placeholder="Anywhere"
+          onSuggestSelect={this.onSuggestSelect}
+          location={
+            // eslint-disable-next-line
+            new google.maps.LatLng(52.52000659999999, 13.404953999999975)
+          }
+          radius="20"
+        />
       </div>
     );
   }
