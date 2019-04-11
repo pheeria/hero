@@ -13,9 +13,9 @@ const MyMapComponent = withGoogleMap(props => (
     defaultZoom={8}
     defaultCenter={{ lat: berlin.lat, lng: berlin.lng }}
   >
-    {props.isMarkerShown && (
-      <Marker position={{ lat: 52.5248, lng: 13.393141600000035 }} />
-    )}
+    {props.places.map(place => (
+      <Marker key={place.id} position={place.location} />
+    ))}
   </GoogleMap>
 ));
 
@@ -37,7 +37,28 @@ class App extends Component {
           radius="20"
         />
         <MyMapComponent
-          isMarkerShown
+          places={[
+            {
+              id: 'uuid',
+              name: 'Delivery Hero',
+              rating: 5,
+              favoriteFood: 'Et',
+              location: {
+                lat: 52.5248,
+                lng: 13.393141600000035
+              }
+            },
+            {
+              id: 'uuid2',
+              name: 'Berlin Cigkofte',
+              rating: 5,
+              favoriteFood: 'Cig kofte',
+              location: {
+                lat: 52.47732379999999,
+                lng: 13.425160300000016
+              }
+            }
+          ]}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
