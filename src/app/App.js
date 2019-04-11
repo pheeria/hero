@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Suggest from '../suggest/Suggest';
 import Map from '../map/Map';
-import PlaceList from '../placeList/PlaceList';
+import PlaceListContainer from '../placeList/PlaceListContainer';
 import './App.css';
 import { Layout } from 'antd';
 
@@ -54,7 +54,7 @@ class App extends Component {
               />
             </Content>
             <Sider style={{ backgroundColor: `white` }}>
-              <PlaceList places={places} />
+              <PlaceListContainer />
             </Sider>
           </Layout>
           <Footer>Footer</Footer>
