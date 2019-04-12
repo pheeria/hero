@@ -1,19 +1,21 @@
 import React from 'react';
 import { List, Skeleton, Rate } from 'antd';
 
-const PlaceList = ({ places }) => (
+const PlaceList = ({ places, removePlace }) => (
   <List
     className="demo-loadmore-list"
     itemLayout="vertical"
     dataSource={places}
-    renderItem={item => (
-      <List.Item actions={[<button>X</button>]}>
+    renderItem={place => (
+      <List.Item
+        actions={[<button onClick={() => removePlace(place)}>X</button>]}
+      >
         <Skeleton title={true} loading={false} active>
           <List.Item.Meta
-            title={<a href="https://ant.design">{item.name}</a>}
-            description={item.favoriteFood}
+            title={<a href="https://ant.design">{place.name}</a>}
+            description={place.favoriteFood}
           />
-          <Rate defaultValue={item.rating} />
+          <Rate disabled defaultValue={place.rating} />
         </Skeleton>
       </List.Item>
     )}

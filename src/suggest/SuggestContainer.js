@@ -4,7 +4,7 @@ import { addPlace } from '../redux/actions';
 import { berlin } from '../redux/constants';
 
 const mapStateToProps = state => ({
-  berlin: berlin
+  berlin
 });
 
 const mapDispatchToProps = {
