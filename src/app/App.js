@@ -19,7 +19,7 @@ class App extends Component {
             <Content>
               <MapContainer />
             </Content>
-            <Sider style={{ backgroundColor: `white` }}>
+            <Sider width={`400px`} style={{ backgroundColor: `white` }}>
               <PlaceListContainer />
             </Sider>
           </Layout>
