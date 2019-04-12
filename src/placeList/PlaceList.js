@@ -14,8 +14,13 @@ const PlaceList = ({ places, removePlace }) => (
           title={<a href="https://ant.design">{place.name}</a>}
           description={
             <div>
-              <Rate disabled defaultValue={place.rating} />
-              Favorite: {place.favoriteFood}
+              <div>
+                <Icon type="heart" theme="twoTone" twoToneColor="#eb2f96" />:{' '}
+                {place.favoriteFood}
+              </div>
+              <div>
+                <Rate disabled defaultValue={place.rating} />
+              </div>
             </div>
           }
         />
