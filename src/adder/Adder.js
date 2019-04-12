@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import { Form, Icon, Input, Button, Rate } from 'antd';
 
 class Adder extends Component {
@@ -7,6 +8,11 @@ class Adder extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        this.props.addPlace({
+          id: uuid.v4(),
+          location: this.props.location,
+          ...values
+        });
       }
     });
   };
@@ -14,7 +20,11 @@ class Adder extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
+      <Form
+        onSubmit={this.handleSubmit}
+        onReset={this.props.reset}
+        className="login-form"
+      >
         <Form.Item>
           {getFieldDecorator('name', {
             rules: [
@@ -51,12 +61,8 @@ class Adder extends Component {
           })(<Rate />)}
         </Form.Item>
         <Form.Item>
-          <Button>Cancel</Button>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="login-form-button"
-          >
+          <Button htmlType="reset">Cancel</Button>
+          <Button type="primary" htmlType="submit">
             Add
           </Button>
         </Form.Item>
@@ -65,4 +71,4 @@ class Adder extends Component {
   }
 }
 
-export default Form.create({ name: 'normal_login' })(Adder);
+export default Form.create()(Adder);

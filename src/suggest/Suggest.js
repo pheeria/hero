@@ -1,21 +1,15 @@
 import React from 'react';
-import uuid from 'uuid';
 import Geosuggest from 'react-geosuggest';
 import './Suggest.css';
 
-const Suggest = ({ berlin, addPlace }) => (
+const Suggest = ({ berlin, presetLocation }) => (
   <Geosuggest
     placeholder="Anywhere"
     onSuggestSelect={s => {
       console.log(s);
-      let place = {
-        id: uuid.v4(),
-        name: s.label,
-        rating: 5,
-        favoriteFood: 'Et',
-        location: s.location
-      };
-      addPlace(place);
+      if (s) {
+        presetLocation(s.location);
+      }
     }}
     location={
       // eslint-disable-next-line no-undef

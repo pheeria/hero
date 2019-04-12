@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Suggest from './Suggest';
-import { addPlace } from '../redux/actions';
+import { presetLocation } from '../redux/actions';
 import { berlin } from '../redux/constants';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addPlace
+  presetLocation
 };
 
 export default connect(
