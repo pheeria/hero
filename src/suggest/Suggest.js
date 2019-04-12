@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 import Geosuggest from 'react-geosuggest';
 import './Suggest.css';
 
@@ -8,7 +9,7 @@ const Suggest = ({ berlin, addPlace }) => (
     onSuggestSelect={s => {
       console.log(s);
       let place = {
-        id: s.label,
+        id: uuid.v4(),
         name: s.label,
         rating: 5,
         favoriteFood: 'Et',
@@ -17,7 +18,7 @@ const Suggest = ({ berlin, addPlace }) => (
       addPlace(place);
     }}
     location={
-      // eslint-disable-next-line
+      // eslint-disable-next-line no-undef
       new google.maps.LatLng(berlin.lat, berlin.lng)
     }
     radius="20"
