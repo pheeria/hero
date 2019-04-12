@@ -1,5 +1,6 @@
 export const ADD_PLACE = 'ADD_PLACE';
 export const REMOVE_PLACE = 'REMOVE_PLACE';
+export const PRESET_LOCATION = 'PRESET_LOCATION';
 
 export const berlin = {
   lat: 52.52000659999999,
