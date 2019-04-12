@@ -1,11 +1,17 @@
 import { connect } from 'react-redux';
 import Suggest from './Suggest';
-import addPlace from '../redux/actions';
+import { addPlace } from '../redux/actions';
 import { berlin } from '../redux/constants';
 
+const mapStateToProps = state => ({
+  berlin: berlin
+});
+
+const mapDispatchToProps = {
+  addPlace
+};
+
 export default connect(
-  ...berlin,
-  {
-    addPlace
-  }
+  mapStateToProps,
+  mapDispatchToProps
 )(Suggest);

@@ -2,22 +2,23 @@ import React from 'react';
 import Geosuggest from 'react-geosuggest';
 import './Suggest.css';
 
-const Suggest = ({ lat, lng, addPlace }) => (
+const Suggest = ({ berlin, addPlace }) => (
   <Geosuggest
     placeholder="Anywhere"
-    onSuggestSelect={({ label, location }) => {
-      let newPlace = {
-        id: label,
-        name: label,
+    onSuggestSelect={s => {
+      console.log(s);
+      let place = {
+        id: s.label,
+        name: s.label,
         rating: 5,
         favoriteFood: 'Et',
-        location
+        location: s.location
       };
-      addPlace(newPlace);
+      addPlace(place);
     }}
     location={
       // eslint-disable-next-line
-      new google.maps.LatLng(lat, lng)
+      new google.maps.LatLng(berlin.lat, berlin.lng)
     }
     radius="20"
   />

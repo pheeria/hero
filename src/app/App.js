@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Suggest from '../suggest/Suggest';
 import Map from '../map/Map';
 import PlaceListContainer from '../placeList/PlaceListContainer';
 import './App.css';
 import { Layout } from 'antd';
+import SuggestContainer from '../suggest/SuggestContainer';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -41,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Layout>
           <Header style={{ height: `15vh`, backgroundColor: `white` }}>
-            <Suggest {...berlin} />
+            <SuggestContainer />
           </Header>
           <Layout>
             <Content>
