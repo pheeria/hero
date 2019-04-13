@@ -10,7 +10,7 @@ describe('Reducers', () => {
   const state = [
     {
       id: 'uuid',
-      name: 'Delivery Hero',
+      name: 'Hero',
       rating: 5,
       favoriteFood: 'Et',
       location: {
@@ -38,7 +38,7 @@ describe('Reducers', () => {
     const expected = [
       {
         id: 'uuid',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Et',
         location: {
@@ -67,7 +67,7 @@ describe('Reducers', () => {
       type: ADD_PLACE,
       place: {
         id: 'uuid2',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Kottbullar',
         location: {
@@ -80,7 +80,7 @@ describe('Reducers', () => {
     const expected = [
       {
         id: 'uuid',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Et',
         location: {
@@ -90,7 +90,7 @@ describe('Reducers', () => {
       },
       {
         id: 'uuid2',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Kottbullar',
         location: {
@@ -109,7 +109,7 @@ describe('Reducers', () => {
       type: REMOVE_PLACE,
       place: {
         id: 'uuid',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Et',
         location: {

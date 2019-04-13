@@ -10,7 +10,7 @@ describe('Actions', () => {
   it('should create addPlace action', () => {
     const input = {
       id: 'uuid',
-      name: 'Delivery Hero',
+      name: 'Hero',
       rating: 5,
       favoriteFood: 'Et',
       location: {
@@ -23,7 +23,7 @@ describe('Actions', () => {
       type: ADD_PLACE,
       place: {
         id: 'uuid',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Et',
         location: {
@@ -40,7 +40,7 @@ describe('Actions', () => {
   it('should create removePlace action', () => {
     const input = {
       id: 'uuid',
-      name: 'Delivery Hero',
+      name: 'Hero',
       rating: 5,
       favoriteFood: 'Et',
       location: {
@@ -53,7 +53,7 @@ describe('Actions', () => {
       type: REMOVE_PLACE,
       place: {
         id: 'uuid',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Et',
         location: {
@@ -70,7 +70,7 @@ describe('Actions', () => {
   it('should create selectPlace action', () => {
     const input = {
       id: 'uuid',
-      name: 'Delivery Hero',
+      name: 'Hero',
       rating: 5,
       favoriteFood: 'Et',
       location: {
@@ -83,7 +83,7 @@ describe('Actions', () => {
       type: SELECT_PLACE,
       place: {
         id: 'uuid',
-        name: 'Delivery Hero',
+        name: 'Hero',
         rating: 5,
         favoriteFood: 'Et',
         location: {
