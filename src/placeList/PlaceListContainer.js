@@ -4,7 +4,7 @@ import { removePlace } from '../redux/actions';
 
 const mapStateToProps = state => ({
   places: state.places,
-  center: state.center
+  selectedPlace: state.selectedPlace
 });
 
 const mapDispatchToProps = {

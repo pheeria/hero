@@ -1,16 +1,17 @@
 import React from 'react';
 import { List, Rate, Icon } from 'antd';
 
-const PlaceList = ({ places, center, removePlace }) => (
+const PlaceList = ({ places, selectedPlace, removePlace }) => (
   <List
-    className="demo-loadmore-list"
     itemLayout="horizontal"
     dataSource={places}
     renderItem={place => (
       <List.Item
         actions={[<Icon onClick={() => removePlace(place)} type="close" />]}
         style={
-          center && center.id === place.id ? { border: `1px solid red` } : null
+          selectedPlace && selectedPlace.id === place.id
+            ? { border: `1px solid red` }
+            : null
         }
       >
         <List.Item.Meta

@@ -15,15 +15,15 @@ const Map = withGoogleMap(
     addPlace,
     tempLocation,
     setTempLocation,
-    center,
-    setCenter
+    selectedPlace,
+    selectPlace
   }) => {
-    const [mapCenter, setMapCenter] = useState(
-      (center && center.location) || tempLocation || berlin
+    const [center, setCenter] = useState(
+      (selectedPlace && selectedPlace.location) || tempLocation || berlin
     );
 
     return (
-      <GoogleMap defaultZoom={14} center={mapCenter}>
+      <GoogleMap defaultZoom={14} center={center}>
         {tempLocation ? (
           <OverlayView
             // eslint-disable-next-line no-undef
@@ -48,8 +48,8 @@ const Map = withGoogleMap(
             <Marker
               onClick={() => {
                 setTempLocation(null);
-                setMapCenter(place.location);
-                setCenter(place);
+                setCenter(place.location);
+                selectPlace(place);
               }}
               key={place.id}
               position={place.location}

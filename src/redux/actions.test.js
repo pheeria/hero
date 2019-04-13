@@ -1,9 +1,9 @@
-import { addPlace, removePlace, setTempLocation, setCenter } from './actions';
+import { addPlace, removePlace, setTempLocation, selectPlace } from './actions';
 import {
   ADD_PLACE,
   REMOVE_PLACE,
   SET_TEMP_LOCATION,
-  SET_CENTER
+  SELECT_PLACE
 } from './constants';
 
 describe('Actions', () => {
@@ -67,7 +67,7 @@ describe('Actions', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should create setCenter action', () => {
+  it('should create selectPlace action', () => {
     const input = {
       id: 'uuid',
       name: 'Delivery Hero',
@@ -80,7 +80,7 @@ describe('Actions', () => {
     };
 
     const expected = {
-      type: SET_CENTER,
+      type: SELECT_PLACE,
       place: {
         id: 'uuid',
         name: 'Delivery Hero',
@@ -92,7 +92,7 @@ describe('Actions', () => {
         }
       }
     };
-    const actual = setCenter(input);
+    const actual = selectPlace(input);
 
     expect(actual).toEqual(expected);
   });

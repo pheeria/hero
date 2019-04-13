@@ -1,9 +1,9 @@
-import { places, tempLocation, center } from './reducers';
+import { places, tempLocation, selectedPlace } from './reducers';
 import {
   ADD_PLACE,
   REMOVE_PLACE,
   SET_TEMP_LOCATION,
-  SET_CENTER
+  SELECT_PLACE
 } from './constants';
 
 describe('Reducers', () => {
@@ -161,9 +161,9 @@ describe('Reducers', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should set center', () => {
+  it('should select place', () => {
     const input = {
-      type: SET_CENTER,
+      type: SELECT_PLACE,
       place: {
         id: 'uuid2',
         name: 'Berlin Cigkofte',
@@ -186,7 +186,7 @@ describe('Reducers', () => {
         lng: 13.425160300000016
       }
     };
-    const actual = center(null, input);
+    const actual = selectedPlace(null, input);
 
     expect(actual).toEqual(expected);
   });

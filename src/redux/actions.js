@@ -2,7 +2,7 @@ import {
   ADD_PLACE,
   REMOVE_PLACE,
   SET_TEMP_LOCATION,
-  SET_CENTER
+  SELECT_PLACE
 } from './constants';
 
 export const addPlace = place => ({
@@ -15,8 +15,8 @@ export const removePlace = place => ({
   place
 });
 
-export const setCenter = place => ({
-  type: SET_CENTER,
+export const selectPlace = place => ({
+  type: SELECT_PLACE,
   place
 });
 

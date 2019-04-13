@@ -7,7 +7,6 @@ class Adder extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
         this.props.addPlace({
           id: uuid.v4(),
           location: this.props.location,
@@ -36,7 +35,6 @@ class Adder extends Component {
                 <Icon type="pushpin" style={{ color: 'rgba(0,0,0,.25)' }} />
               }
               placeholder="Restaurant Name"
-              onChange={v => console.log(v.target.value)}
             />
           )}
         </Form.Item>
@@ -51,7 +49,6 @@ class Adder extends Component {
                 <Icon type="heart" style={{ color: 'rgba(0,0,0,.25)' }} />
               }
               placeholder="Favorite Food"
-              onChange={v => console.log(v.target.value)}
             />
           )}
         </Form.Item>
