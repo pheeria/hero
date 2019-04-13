@@ -1,4 +1,4 @@
-# Hero
+# Hero [![Build Status](https://travis-ci.org/pheeria/hero.svg?branch=master)](https://travis-ci.org/pheeria/hero) [![Netlify Status](https://api.netlify.com/api/v1/badges/d59e6be8-da0a-4988-bfb4-66c4c9cb5186/deploy-status)](https://app.netlify.com/sites/resthero/deploys)
 
 Simple web app to keep tracking of your favorite restaurants.
 Deployed on Netlify at [https://resthero.netlify.com](https://resthero.netlify.com)
