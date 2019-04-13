@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
   places: state.places,
   tempLocation: state.tempLocation,
   selectedPlace: state.selectedPlace,
-  berlin: berlin,
+  city: berlin,
   loadingElement: <div style={{ height: `100%` }} />,
   containerElement: <div style={{ height: `70vh` }} />,
   mapElement: <div style={{ height: `100%` }} />

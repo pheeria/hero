@@ -4,7 +4,7 @@ import { setTempLocation } from '../redux/actions';
 import { berlin } from '../redux/constants';
 
 const mapStateToProps = state => ({
-  berlin
+  city: berlin
 });
 
 const mapDispatchToProps = {
