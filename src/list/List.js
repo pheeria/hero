@@ -1,12 +1,12 @@
 import React from 'react';
-import { List, Rate, Icon } from 'antd';
+import { List as AntList, Rate, Icon } from 'antd';
 
-const PlaceList = ({ places, selectedPlace, removePlace }) => (
-  <List
+const List = ({ places, selectedPlace, removePlace }) => (
+  <AntList
     itemLayout="horizontal"
     dataSource={places}
     renderItem={place => (
-      <List.Item
+      <AntList.Item
         actions={[<Icon onClick={() => removePlace(place)} type="close" />]}
         style={
           selectedPlace && selectedPlace.id === place.id
@@ -14,8 +14,8 @@ const PlaceList = ({ places, selectedPlace, removePlace }) => (
             : null
         }
       >
-        <List.Item.Meta
-          title={<a href="https://ant.design">{place.name}</a>}
+        <AntList.Item.Meta
+          title={<p>{place.name}</p>}
           description={
             <div>
               <div>
@@ -28,9 +28,9 @@ const PlaceList = ({ places, selectedPlace, removePlace }) => (
             </div>
           }
         />
-      </List.Item>
+      </AntList.Item>
     )}
   />
 );
 
-export default PlaceList;
+export default List;

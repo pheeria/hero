@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PlaceListContainer from '../placeList/PlaceListContainer';
+import ListContainer from '../list/ListContainer';
 import './App.css';
 import { Layout } from 'antd';
 import SuggestContainer from '../suggest/SuggestContainer';
@@ -20,7 +20,7 @@ class App extends Component {
               <MapContainer />
             </Content>
             <Sider width={`400px`} style={{ backgroundColor: `white` }}>
-              <PlaceListContainer />
+              <ListContainer />
             </Sider>
           </Layout>
           <Footer>Footer</Footer>
