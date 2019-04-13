@@ -21,12 +21,13 @@ const Map = ({
   );
 
   useEffect(() => {
+    if (selectedPlace) {
+      setCenter(selectedPlace.location);
+    }
     if (tempLocation) {
-      console.log(selectedPlace);
-      console.log(tempLocation);
       setCenter(tempLocation);
     }
-  }, [tempLocation]);
+  }, [tempLocation, selectedPlace]);
 
   return (
     <GoogleMap defaultZoom={14} center={center}>

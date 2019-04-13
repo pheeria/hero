@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { List as AntList, Rate, Icon, AutoComplete, Row, Col } from 'antd';
 
-const List = ({ places, selectedPlace, removePlace }) => {
+const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
   const [sortAscending, setSortAscending] = useState(true);
   const [modifiedPlaces, setModifiedPlaces] = useState(places);
   useEffect(() => setModifiedPlaces(places), [places]);
@@ -48,6 +48,7 @@ const List = ({ places, selectedPlace, removePlace }) => {
         dataSource={modifiedPlaces}
         renderItem={place => (
           <AntList.Item
+            onClick={() => selectPlace(place)}
             actions={[
               <Icon
                 style={{ color: `white` }}

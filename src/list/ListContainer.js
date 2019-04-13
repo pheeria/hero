@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import List from './List';
-import { removePlace } from '../redux/actions';
+import { removePlace, selectPlace } from '../redux/actions';
 
 const mapStateToProps = state => ({
   places: state.places,
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  removePlace
+  removePlace,
+  selectPlace
 };
 
 export default connect(
