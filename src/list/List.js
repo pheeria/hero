@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { List as AntList, Rate, Icon, AutoComplete, Row, Col } from 'antd';
 
 const List = ({ places, selectedPlace, removePlace }) => {
   const [sortAscending, setSortAscending] = useState(true);
   const [modifiedPlaces, setModifiedPlaces] = useState(places);
+  useEffect(() => setModifiedPlaces(places));
   return (
     <div style={{ padding: '10px' }}>
       <Row type="flex" align="middle" justify="space-between">
