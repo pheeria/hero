@@ -10,7 +10,7 @@ const { Header, Sider, Content } = Layout;
 const App = () => (
   <div className="App">
     <Layout>
-      <Sider width={`300px`} style={{ backgroundColor: `white` }}>
+      <Sider width={`300px`}>
         <ListContainer />
       </Sider>
       <Layout>

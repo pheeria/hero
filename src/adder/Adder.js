@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
-import { Form, Icon, Input, Button, Rate, Card } from 'antd';
+import { Form, Icon, Input, Button, Rate, Card, Row, Col } from 'antd';
 
 class Adder extends Component {
   handleSubmit = e => {
@@ -20,12 +20,8 @@ class Adder extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <Card>
-        <Form
-          onSubmit={this.handleSubmit}
-          onReset={this.props.reset}
-          className="login-form"
-        >
-          <Form.Item>
+        <Form onSubmit={this.handleSubmit} onReset={this.props.reset}>
+          <Form.Item style={{ marginBottom: 0 }}>
             {getFieldDecorator('name', {
               rules: [
                 { required: true, message: 'Please input restaurant name!' }
@@ -39,7 +35,7 @@ class Adder extends Component {
               />
             )}
           </Form.Item>
-          <Form.Item>
+          <Form.Item style={{ marginBottom: 0 }}>
             {getFieldDecorator('favoriteFood', {
               rules: [
                 { required: true, message: 'Please input your favorite food!' }
@@ -53,16 +49,24 @@ class Adder extends Component {
               />
             )}
           </Form.Item>
-          <Form.Item>
+          <Form.Item style={{ textAlign: `center`, marginBottom: 0 }}>
             {getFieldDecorator('rating', {
               initialValue: 3
             })(<Rate />)}
           </Form.Item>
-          <Form.Item>
-            <Button htmlType="reset">Cancel</Button>
-            <Button type="primary" htmlType="submit">
-              Add
-            </Button>
+          <Form.Item style={{ marginBottom: 0 }}>
+            <Row type="flex" justify="space-between">
+              <Col span={10}>
+                <Button htmlType="reset" block>
+                  Cancel
+                </Button>
+              </Col>
+              <Col span={10}>
+                <Button type="primary" htmlType="submit" block>
+                  Add
+                </Button>
+              </Col>
+            </Row>
           </Form.Item>
         </Form>
       </Card>
