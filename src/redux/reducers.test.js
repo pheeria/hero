@@ -1,5 +1,10 @@
-import { places, preset } from './reducers';
-import { ADD_PLACE, REMOVE_PLACE, PRESET_LOCATION } from './constants';
+import { places, preset, center } from './reducers';
+import {
+  ADD_PLACE,
+  REMOVE_PLACE,
+  PRESET_LOCATION,
+  SET_CENTER
+} from './constants';
 
 describe('Reducers', () => {
   const state = [
@@ -152,6 +157,36 @@ describe('Reducers', () => {
       },
       input
     );
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should set center', () => {
+    const input = {
+      type: SET_CENTER,
+      place: {
+        id: 'uuid2',
+        name: 'Berlin Cigkofte',
+        rating: 5,
+        favoriteFood: 'Cig kofte',
+        location: {
+          lat: 52.47732379999999,
+          lng: 13.425160300000016
+        }
+      }
+    };
+
+    const expected = {
+      id: 'uuid2',
+      name: 'Berlin Cigkofte',
+      rating: 5,
+      favoriteFood: 'Cig kofte',
+      location: {
+        lat: 52.47732379999999,
+        lng: 13.425160300000016
+      }
+    };
+    const actual = center(null, input);
 
     expect(actual).toEqual(expected);
   });

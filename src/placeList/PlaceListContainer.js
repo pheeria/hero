@@ -3,7 +3,8 @@ import PlaceList from './PlaceList';
 import { removePlace } from '../redux/actions';
 
 const mapStateToProps = state => ({
-  places: state.places
+  places: state.places,
+  center: state.center
 });
 
 const mapDispatchToProps = {
