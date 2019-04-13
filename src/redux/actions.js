@@ -1,7 +1,7 @@
 import {
   ADD_PLACE,
   REMOVE_PLACE,
-  PRESET_LOCATION,
+  SET_TEMP_LOCATION,
   SET_CENTER
 } from './constants';
 
@@ -20,7 +20,7 @@ export const setCenter = place => ({
   place
 });
 
-export const presetLocation = location => ({
-  type: PRESET_LOCATION,
+export const setTempLocation = location => ({
+  type: SET_TEMP_LOCATION,
   location
 });

@@ -9,29 +9,37 @@ import { Card } from 'antd';
 import Adder from '../adder/Adder';
 
 const Map = withGoogleMap(
-  ({ places, preset, berlin, center, addPlace, presetLocation, setCenter }) => {
+  ({
+    berlin,
+    places,
+    addPlace,
+    tempLocation,
+    setTempLocation,
+    center,
+    setCenter
+  }) => {
     const [mapCenter, setMapCenter] = useState(
-      (center && center.location) || preset || berlin
+      (center && center.location) || tempLocation || berlin
     );
 
     return (
       <GoogleMap defaultZoom={14} center={mapCenter}>
-        {preset ? (
+        {tempLocation ? (
           <OverlayView
             // eslint-disable-next-line no-undef
             ref={ref => ref && google.maps.OverlayView.preventMapHitsFrom(ref)}
             onClick={e => e.preventDefault()}
-            position={preset}
+            position={tempLocation}
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
             <Card>
               <Adder
-                location={preset}
+                location={tempLocation}
                 addPlace={newPlace => {
                   addPlace(newPlace);
-                  presetLocation(null);
+                  setTempLocation(null);
                 }}
-                reset={() => presetLocation(null)}
+                reset={() => setTempLocation(null)}
               />
             </Card>
           </OverlayView>
@@ -39,7 +47,7 @@ const Map = withGoogleMap(
           places.map(place => (
             <Marker
               onClick={() => {
-                presetLocation(null);
+                setTempLocation(null);
                 setMapCenter(place.location);
                 setCenter(place);
               }}

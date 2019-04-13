@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Map from './Map';
 import { berlin } from '../redux/constants';
-import { addPlace, presetLocation, setCenter } from '../redux/actions';
+import { addPlace, setTempLocation, setCenter } from '../redux/actions';
 
 const mapStateToProps = state => ({
   places: state.places,
-  preset: state.preset,
+  tempLocation: state.tempLocation,
   center: state.center,
   berlin: berlin,
   loadingElement: <div style={{ height: `100%` }} />,
@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addPlace,
-  presetLocation,
+  setTempLocation,
   setCenter
 };
 

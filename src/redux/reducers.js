@@ -1,7 +1,7 @@
 import {
   ADD_PLACE,
   REMOVE_PLACE,
-  PRESET_LOCATION,
+  SET_TEMP_LOCATION,
   SET_CENTER
 } from './constants';
 import { combineReducers } from 'redux';
@@ -17,9 +17,9 @@ export const places = (state = [], action) => {
   }
 };
 
-export const preset = (state = null, action) => {
+export const tempLocation = (state = null, action) => {
   switch (action.type) {
-    case PRESET_LOCATION:
+    case SET_TEMP_LOCATION:
       return action.location;
     default:
       return state;
@@ -37,7 +37,7 @@ export const center = (state = null, action) => {
 
 const reducer = combineReducers({
   places,
-  preset,
+  tempLocation,
   center
 });
 

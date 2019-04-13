@@ -1,8 +1,8 @@
-import { places, preset, center } from './reducers';
+import { places, tempLocation, center } from './reducers';
 import {
   ADD_PLACE,
   REMOVE_PLACE,
-  PRESET_LOCATION,
+  SET_TEMP_LOCATION,
   SET_CENTER
 } from './constants';
 
@@ -125,9 +125,9 @@ describe('Reducers', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should preset location', () => {
+  it('should set temp location', () => {
     const input = {
-      type: PRESET_LOCATION,
+      type: SET_TEMP_LOCATION,
       location: {
         lat: 52.49941439999999,
         lng: 13.4481131
@@ -138,19 +138,19 @@ describe('Reducers', () => {
       lat: 52.49941439999999,
       lng: 13.4481131
     };
-    const actual = preset(null, input);
+    const actual = tempLocation(null, input);
 
     expect(actual).toEqual(expected);
   });
 
-  it('should clear preset', () => {
+  it('should clear temp location', () => {
     const input = {
-      type: PRESET_LOCATION,
+      type: SET_TEMP_LOCATION,
       location: null
     };
 
     const expected = null;
-    const actual = preset(
+    const actual = tempLocation(
       {
         lat: 52.49941439999999,
         lng: 13.4481131

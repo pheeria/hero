@@ -1,8 +1,8 @@
-import { addPlace, removePlace, presetLocation, setCenter } from './actions';
+import { addPlace, removePlace, setTempLocation, setCenter } from './actions';
 import {
   ADD_PLACE,
   REMOVE_PLACE,
-  PRESET_LOCATION,
+  SET_TEMP_LOCATION,
   SET_CENTER
 } from './constants';
 
@@ -97,20 +97,20 @@ describe('Actions', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should create presetLocation action', () => {
+  it('should create setTempLocation action', () => {
     const input = {
       lat: 52.5248,
       lng: 13.393141600000035
     };
 
     const expected = {
-      type: PRESET_LOCATION,
+      type: SET_TEMP_LOCATION,
       location: {
         lat: 52.5248,
         lng: 13.393141600000035
       }
     };
-    const actual = presetLocation(input);
+    const actual = setTempLocation(input);
 
     expect(actual).toEqual(expected);
   });

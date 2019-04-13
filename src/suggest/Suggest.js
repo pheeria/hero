@@ -2,13 +2,12 @@ import React from 'react';
 import Geosuggest from 'react-geosuggest';
 import './Suggest.css';
 
-const Suggest = ({ berlin, presetLocation }) => (
+const Suggest = ({ berlin, setTempLocation }) => (
   <Geosuggest
     placeholder="Anywhere"
-    onSuggestSelect={s => {
-      console.log(s);
-      if (s) {
-        presetLocation(s.location);
+    onSuggestSelect={suggested => {
+      if (suggested) {
+        setTempLocation(suggested.location);
       }
     }}
     location={
