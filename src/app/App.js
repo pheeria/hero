@@ -3,25 +3,24 @@ import { Layout } from 'antd';
 import SuggestContainer from '../suggest/SuggestContainer';
 import MapContainer from '../map/MapContainer';
 import ListContainer from '../list/ListContainer';
-import './App.css';
+import 'antd/dist/antd.css';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 const App = () => (
   <div className="App">
     <Layout>
-      <Header style={{ height: `15vh`, backgroundColor: `white` }}>
-        <SuggestContainer />
-      </Header>
+      <Sider width={`300px`} style={{ backgroundColor: `white` }}>
+        <ListContainer />
+      </Sider>
       <Layout>
+        <Header style={{ backgroundColor: `white` }}>
+          <SuggestContainer />
+        </Header>
         <Content>
           <MapContainer />
         </Content>
-        <Sider width={`300px`} style={{ backgroundColor: `white` }}>
-          <ListContainer />
-        </Sider>
       </Layout>
-      <Footer>Footer</Footer>
     </Layout>
   </div>
 );
