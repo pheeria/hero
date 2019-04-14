@@ -6,9 +6,9 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
   const [modifiedPlaces, setModifiedPlaces] = useState(places);
   useEffect(() => setModifiedPlaces(places), [places]);
   return (
-    <div>
+    <div style={{ height: `100vh` }}>
       <Row
-        style={{ height: `64px`, backgroundColor: `#000010`, padding: '10px' }}
+        style={{ height: `64px`, backgroundColor: `#000010`, padding: `10px` }}
         type="flex"
         align="middle"
         justify="space-between"
@@ -31,7 +31,7 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
         <Col span={2}>
           <Icon
             style={{ color: `white` }}
-            type={sortAscending ? 'sort-ascending' : 'sort-descending'}
+            type={sortAscending ? `sort-ascending` : `sort-descending`}
             onClick={() => {
               setSortAscending(!sortAscending);
               setModifiedPlaces(
@@ -44,8 +44,11 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
         </Col>
       </Row>
       <AntList
-        size="small"
         dataSource={modifiedPlaces}
+        style={{
+          overflow: `auto`,
+          height: `calc(100vh - 64px)`
+        }}
         renderItem={place => (
           <AntList.Item
             onClick={() => selectPlace(place)}

@@ -14,7 +14,7 @@ const Suggest = ({ city, setTempLocation }) => (
       // eslint-disable-next-line no-undef
       new google.maps.LatLng(city.lat, city.lng)
     }
-    radius="20"
+    radius={20}
   />
 );
 

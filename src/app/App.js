@@ -10,7 +10,7 @@ const { Header, Sider, Content } = Layout;
 const App = () => (
   <div className="App">
     <Layout>
-      <Sider width={`300px`}>
+      <Sider width={`300px`} breakpoint="lg" collapsedWidth="0">
         <ListContainer />
       </Sider>
       <Layout>

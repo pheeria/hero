@@ -29,7 +29,7 @@ class Adder extends Component {
             })(
               <Input
                 prefix={
-                  <Icon type="pushpin" style={{ color: 'rgba(0,0,0,.25)' }} />
+                  <Icon type="pushpin" style={{ color: `rgba(0,0,0,.25)` }} />
                 }
                 placeholder="Restaurant Name"
               />
@@ -43,7 +43,7 @@ class Adder extends Component {
             })(
               <Input
                 prefix={
-                  <Icon type="heart" style={{ color: 'rgba(0,0,0,.25)' }} />
+                  <Icon type="heart" style={{ color: `rgba(0,0,0,.25)` }} />
                 }
                 placeholder="Favorite Food"
               />
