@@ -38,7 +38,9 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
             onClick={() => {
               setModifiedPlaces(
                 modifiedPlaces.sort((a, b) =>
-                  sortAscending ? a.name < b.name : a.name > b.name
+                  sortAscending
+                    ? b.name.localeCompare(a.name)
+                    : a.name.localeCompare(b.name)
                 )
               );
               setSortAscending(!sortAscending);
