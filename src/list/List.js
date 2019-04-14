@@ -36,12 +36,12 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
             style={{ color: `white` }}
             type={sortAscending ? `sort-ascending` : `sort-descending`}
             onClick={() => {
-              setSortAscending(!sortAscending);
               setModifiedPlaces(
                 modifiedPlaces.sort((a, b) =>
                   sortAscending ? a.name < b.name : a.name > b.name
                 )
               );
+              setSortAscending(!sortAscending);
             }}
           />
         </Col>
