@@ -27,7 +27,7 @@ const Map = ({
     if (tempLocation) {
       setCenter(tempLocation);
     }
-  }, [tempLocation, selectedPlace]);
+  }, [selectedPlace, tempLocation]);
 
   return (
     <GoogleMap defaultZoom={14} center={center}>
@@ -52,11 +52,7 @@ const Map = ({
         places.map(place => (
           <Marker
             key={place.id}
-            onClick={() => {
-              setTempLocation(null);
-              setCenter(place.location);
-              selectPlace(place);
-            }}
+            onClick={() => selectPlace(place)}
             position={place.location}
           />
         ))

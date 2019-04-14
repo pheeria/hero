@@ -4,9 +4,11 @@ import { List as AntList, Rate, Icon, AutoComplete, Row, Col } from 'antd';
 const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
   const [sortAscending, setSortAscending] = useState(true);
   const [modifiedPlaces, setModifiedPlaces] = useState(places);
+
   useEffect(() => setModifiedPlaces(places), [places]);
+
   return (
-    <div style={{ height: `100vh` }}>
+    <Col>
       <Row
         style={{ height: `64px`, backgroundColor: `#000010`, padding: `10px` }}
         type="flex"
@@ -15,15 +17,16 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
       >
         <Col span={20}>
           <AutoComplete
-            si
             dataSource={modifiedPlaces.map(mp => mp.name)}
-            onSelect={p =>
-              setModifiedPlaces(places.filter(mp => mp.name.includes(p)))
-            }
+            onSelect={p => selectPlace(places.find(mp => mp.name === p))}
             onSearch={p =>
               !p
                 ? setModifiedPlaces(places)
-                : setModifiedPlaces(places.filter(mp => mp.name.includes(p)))
+                : setModifiedPlaces(
+                    places.filter(mp =>
+                      mp.name.toLowerCase().includes(p.toLowerCase())
+                    )
+                  )
             }
             placeholder="Search"
           />
@@ -71,21 +74,22 @@ const List = ({ places, selectedPlace, removePlace, selectPlace }) => {
             <AntList.Item.Meta
               title={<span style={{ color: `white` }}>{place.name}</span>}
               description={
-                <div style={{ color: `white` }}>
-                  <div>
+                <Col style={{ color: `white` }}>
+                  <Row>
                     <Icon type="heart" theme="twoTone" twoToneColor="#eb2f96" />
-                    : {place.favoriteFood}
-                  </div>
-                  <div>
+                    {`  `}
+                    {place.favoriteFood}
+                  </Row>
+                  <Row>
                     <Rate disabled defaultValue={place.rating} />
-                  </div>
-                </div>
+                  </Row>
+                </Col>
               }
             />
           </AntList.Item>
         )}
       />
-    </div>
+    </Col>
   );
 };
 
