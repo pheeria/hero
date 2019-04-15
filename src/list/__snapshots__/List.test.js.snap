@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should render without crashing 1`] = `
+<Col>
+  <Row
+    align="middle"
+    gutter={0}
+    justify="space-between"
+    style={
+      Object {
+        "backgroundColor": "#000010",
+        "height": "64px",
+        "padding": "10px",
+      }
+    }
+    type="flex"
+  >
+    <Col
+      span={20}
+    >
+      <AutoComplete
+        choiceTransitionName="zoom"
+        dataSource={
+          Array [
+            "Some Place",
+            "Berlin Cigkofte",
+          ]
+        }
+        filterOption={false}
+        onSearch={[Function]}
+        onSelect={[Function]}
+        optionLabelProp="children"
+        placeholder="Search"
+        showSearch={false}
+        transitionName="slide-up"
+      />
+    </Col>
+    <Col
+      span={2}
+    >
+      <Icon
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+        type="sort-ascending"
+      />
+    </Col>
+  </Row>
+  <List
+    bordered={false}
+    dataSource={
+      Array [
+        Object {
+          "favoriteFood": "Et",
+          "id": "uuid",
+          "location": Object {
+            "lat": 52.5248,
+            "lng": 13.393141600000035,
+          },
+          "name": "Some Place",
+          "rating": 5,
+        },
+        Object {
+          "favoriteFood": "Cig kofte",
+          "id": "uuid2",
+          "location": Object {
+            "lat": 52.47732379999999,
+            "lng": 13.425160300000016,
+          },
+          "name": "Berlin Cigkofte",
+          "rating": 5,
+        },
+      ]
+    }
+    loading={false}
+    pagination={false}
+    renderItem={[Function]}
+    split={true}
+    style={
+      Object {
+        "height": "calc(100vh - 64px)",
+        "overflow": "auto",
+      }
+    }
+  />
+</Col>
+`;

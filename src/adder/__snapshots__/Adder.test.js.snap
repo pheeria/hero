@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Map should mount without crashing 1`] = `
+exports[`Adder should mount without crashing 1`] = `
 <Form(Adder)
   addPlace={[MockFunction]}
   location={
@@ -1369,40 +1369,4 @@ exports[`Map should mount without crashing 1`] = `
     </Card>
   </Adder>
 </Form(Adder)>
-`;
-
-exports[`Map should render without crashing 1`] = `
-<Adder
-  addPlace={[MockFunction]}
-  form={
-    Object {
-      "getFieldDecorator": [Function],
-      "getFieldError": [Function],
-      "getFieldInstance": [Function],
-      "getFieldProps": [Function],
-      "getFieldValue": [Function],
-      "getFieldsError": [Function],
-      "getFieldsValue": [Function],
-      "isFieldTouched": [Function],
-      "isFieldValidating": [Function],
-      "isFieldsTouched": [Function],
-      "isFieldsValidating": [Function],
-      "isSubmitting": [Function],
-      "resetFields": [Function],
-      "setFields": [Function],
-      "setFieldsInitialValue": [Function],
-      "setFieldsValue": [Function],
-      "submit": [Function],
-      "validateFields": [Function],
-      "validateFieldsAndScroll": [Function],
-    }
-  }
-  location={
-    Object {
-      "lat": 52.47732379999999,
-      "lng": 13.425160300000016,
-    }
-  }
-  reset={[MockFunction]}
-/>
 `;

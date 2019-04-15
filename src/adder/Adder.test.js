@@ -1,22 +1,10 @@
 import React from 'react';
 import uuid from 'uuid';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Adder from './Adder';
 
-describe('Map', () => {
-  it('should render without crashing', () => {
-    const tempLocation = {
-      lat: 52.47732379999999,
-      lng: 13.425160300000016
-    };
-
-    const wrapper = shallow(
-      <Adder location={tempLocation} reset={jest.fn()} addPlace={jest.fn()} />
-    );
-    expect(toJson(wrapper)).toMatchSnapshot();
-  });
-
+describe('Adder', () => {
   it('should mount without crashing', () => {
     const tempLocation = {
       lat: 52.47732379999999,
