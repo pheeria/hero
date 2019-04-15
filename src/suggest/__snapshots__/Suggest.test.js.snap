@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suggest should render without crashing 1`] = `
+<default_1$1
+  autoActivateFirstSuggest={false}
+  disabled={false}
+  fixtures={Array []}
+  getSuggestLabel={[Function]}
+  highlightMatch={true}
+  ignoreEnter={false}
+  ignoreTab={false}
+  initialValue=""
+  location={mockConstructor {}}
+  maxFixtures={10}
+  minLength={1}
+  onKeyDown={[Function]}
+  onKeyPress={[Function]}
+  onSuggestSelect={[Function]}
+  placeholder="Anywhere"
+  queryDelay={250}
+  radius={20}
+  skipSuggest={[Function]}
+  style={Object {}}
+/>
+`;
