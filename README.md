@@ -26,3 +26,9 @@ You will also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+## Known Issues
+
+Overlay form for adding new places propagates clicks further to the map itself.
+[This seems to be a bug inherent in google maps.](https://issuetracker.google.com/issues/35819207)
+A suggested solution from [the library issues](https://github.com/tomchentw/react-google-maps/issues/84) didn't work.
